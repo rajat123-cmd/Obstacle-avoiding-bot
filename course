@@ -50,10 +50,10 @@ Motor Driver IN2	           7
 Motor Driver IN3	           8
 Motor Driver IN4	           9
 Motor Driver ENB	           3 (PWM)
-Ultrasonic TRIG	             2 
-Ultrasonic ECHO	             4
+Ultrasonic TRIG	              2 
+Ultrasonic ECHO	              4
 Servo Signal	               11 (PWM)
-Buzzer	                     A2
+Buzzer	                      A2
 
 
 Wiring Diagram:-
