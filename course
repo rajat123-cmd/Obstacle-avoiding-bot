@@ -1,0 +1,104 @@
+Obstacle Avoiding Robot:-
+This is a robot car made using Arduino Uno (or similar Arduino boards). The robot can move on its own and avoid obstacles using an ultrasonic sensor and a servo motor that scans the surroundings.
+
+Features:-
+
+1)Autonomous Navigation
+The robot moves forward by itself and detects obstacles in front of it.
+
+2)Smart Scanning
+The ultrasonic sensor is attached to a SG90 Servo Motor, which turns left and right to check for obstacles and find a clear path.
+
+3)Obstacle Avoidance
+If the robot detects something in front of it, it decides whether to turn left, right, or move backward.
+
+4)Audio Feedback
+An Active Buzzer makes a sound when the robot detects an obstacle.
+
+5)Sensor Validation
+The robot checks the sensor reading multiple times to make sure the obstacle detection is correct.
+
+
+Components Needed:-
+
+1. Arduino board (such as Arduino Uno or Arduino Nano)
+
+2. L298N Motor Driver Module
+
+3.  DC motors with wheels(total 4)
+
+4. HC-SR04 Ultrasonic Sensor
+
+5. SG90 Servo Motor
+
+6. Active buzzer
+
+7. Robot chassis with wheels
+
+8. Battery pack (7–12V recommended)
+
+9. Jumper wires
+
+
+
+Pin Configuration:-
+
+[Component]                  	[Arduino Pin]
+Motor Driver ENA	           5 (PWM)
+Motor Driver IN1	           6
+Motor Driver IN2	           7
+Motor Driver IN3	           8
+Motor Driver IN4	           9
+Motor Driver ENB	           3 (PWM)
+Ultrasonic TRIG	             2
+Ultrasonic ECHO	             4
+Servo Signal	               11 (PWM)
+Buzzer	                     A2
+
+
+Wiring Diagram:-
+
+Arduino          L298N Motor Driver
+  5   ---------> ENA (Enable A - PWM)
+  6   ---------> IN1 (Motor A Direction)
+  7   ---------> IN2 (Motor A Direction)
+  8   ---------> IN3 (Motor B Direction)
+  9   ---------> IN4 (Motor B Direction)
+  3   ---------> ENB (Enable B - PWM)
+
+Arduino          HC-SR04 Sensor
+  2   ---------> TRIG
+  4   ---------> ECHO
+ 5V   ---------> VCC
+ GND  ---------> GND
+
+Arduino          Servo Motor
+  11  ---------> Signal (Orange/Yellow)
+ 5V   ---------> VCC (Red)
+ GND  ---------> GND (Brown/Black)
+
+Arduino          Buzzer
+  A2  ---------> Positive (+)
+ GND  ---------> Negative (-)
+
+
+Installation:-
+
+- Install the Arduino IDE and add the Servo library from the Library Manager.
+- Connect your Arduino Uno to the computer using USB and open the (.ino) file in the Arduino IDE.
+- Select the correct board and port, then upload the code to the Arduino.
+
+
+Troubleshooting:-
+
+1) Robot does not move
+Check the connections of the L298N Motor Driver Module and make sure the battery (7–12V) is providing enough power. You can also test the motors directly with the motor driver.
+
+2) Sensor gives wrong readings
+Make sure the HC-SR04 Ultrasonic Sensor is fixed properly and the TRIG and ECHO wires are connected tightly. Try testing without metal or sound-absorbing objects nearby.
+
+3) Robot keeps turning again and again
+Change the SAFE_DISTANCE and STOP_DISTANCE values in the code and make sure the SG90 Servo Motor is centered at 90°.
+
+4) Servo shakes or jitters
+Give separate power to the servo if needed and add a small 100µF capacitor across the servo power wires.
